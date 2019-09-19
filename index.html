@@ -2,6 +2,22 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="teste.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+              window.location.hash = hash;
+            });
+          }
+        });
+      });
+    </script>
 	</head>
 
 	<body>
@@ -9,8 +25,8 @@
   <a href="#inicio">Lobisgang</a>
   <a href="#sobre">Sobre</a>
   <a href="#stream">Stream</a>
-  <a href="#a">Agenda</a>
-  <a href="#b">Contato</a>
+  <a href="#agenda">Agenda</a>
+  <a href="#contato">Contato</a>
 </div>
 
 	
@@ -20,9 +36,9 @@
 
   <a id="stream"><img src="stream.jpg"></a>
 
-  <a id="a"><img src="agenda.jpg" alt="Smiley face" ></a>
+  <a id="agenda"><img src="agenda.jpg"></a>
 
-  <a id="b"><img src="contato.jpg" alt="Smiley face" ></a>
+  <a id="contato"><img src="contato.jpg"></a>
    
 </div>
 	</body>
